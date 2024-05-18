@@ -9,13 +9,10 @@ pipeline {
                 script {
                     sh 'mvn clean install'
                 }
-                // Docker steps for building and pushing dev image
-                docker {
-                    steps {
+                   steps {
                         sh 'docker build -t mohandhgaja/dev:latest .' // Build Docker image
                         sh 'docker push mohandhgaja/dev:latest' // Push to Docker Hub dev repo
                     }
-                }
             }
         }
         stage('Build and Deploy for Master Branch (if on master)') {
@@ -27,13 +24,10 @@ pipeline {
                     // Build commands for your application (identical or different)
                     sh 'mvn clean install'
                 }
-                // Docker steps for building and pushing prod image
-                docker {
                     steps {
                         sh 'docker build -t mohandhgaja/prod:latest .' // Build Docker image
                         sh 'docker push mohandhgaja/prod:latest' // Push to Docker Hub prod repo
                     }
-                }
             }
         }
     }
