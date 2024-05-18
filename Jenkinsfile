@@ -23,16 +23,7 @@ pipeline {
                 }
             }
         }
-        stage('Build Prod Image (on dev to master merge)') {
-            when {
-                branch 'main'  // Only trigger on merges to master
-                changeSet {
-                    not { // Exclude direct pushes to master
-                        author Mohan92Raju // Use your Jenkins user ID if different
-                    }
-                }
-            }
-            steps {
+         steps {
                 script {
                     def imageName = "capstone:prod"
                     docker.build(imageName: imageName, dockerfile: 'Dockerfile')
