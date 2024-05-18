@@ -1,6 +1,6 @@
 pipeline {
-    agent any
-stages {
+    agent { dockerfile true }
+    stages {
        stage('Build for Dev Branch (if on dev)') {
             when {
                 expression { return branch == 'dev' } // Only run on dev branch
