@@ -11,8 +11,6 @@ pipeline {
                 }
                 // Docker steps for building and pushing dev image
                 docker {
-                    image 'maven3' // Use appropriate Docker image for building
-                    apiReturnStdout true
                     steps {
                         sh 'docker build -t mohandhgaja/dev:latest .' // Build Docker image
                         sh 'docker push mohandhgaja/dev:latest' // Push to Docker Hub dev repo
@@ -31,8 +29,6 @@ pipeline {
                 }
                 // Docker steps for building and pushing prod image
                 docker {
-                    image 'maven3' // Use appropriate Docker image for building
-                    apiReturnStdout true
                     steps {
                         sh 'docker build -t mohandhgaja/prod:latest .' // Build Docker image
                         sh 'docker push mohandhgaja/prod:latest' // Push to Docker Hub prod repo
