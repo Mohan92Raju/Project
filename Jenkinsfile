@@ -32,8 +32,9 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'dockerhub_id', usernameVariable: 'mohandhgaja', passwordVariable: 'GPLMRajuDH@7')]) {
                         sh "docker login -u $USERNAME -p $PASSWORD"
                         sh "docker push $imageName"
-                    }
                 }
             }
         }
+    }
 }
+
