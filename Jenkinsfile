@@ -2,7 +2,7 @@ pipeline {
 environment {
 registry = "mohandhgaja/dev"
 registryCredential = 'dockerhub_id'
-dockerImage = ''
+dockerImage = 'capstone'
 }
 agent any
 stages {
@@ -21,7 +21,7 @@ dockerImage = docker.build registry + ":$BUILD_NUMBER"
 stage('Deploy our image') {
 steps{
 script {
-docker.withRegistry( '', registryCredential ) {
+docker.withRegistry( 'capstone', registryCredential ) {
 dockerImage.push()
 }
 }
