@@ -1,15 +1,7 @@
 pipeline {
     agent any
-
-    triggers {
-        github(branches: ["dev", "master"], // Watch both branches for changes
-                traits: [ // Optional: Filter specific push events (e.g., merges)
-                    [ regexp: '^refs/heads/master$', actions: 'build' ] // Build only on master merges
-                ])
-    }
-
-    stages {
-        stage('Build for Dev Branch (if on dev)') {
+stages {
+       stage('Build for Dev Branch (if on dev)') {
             when {
                 expression { return branch == 'dev' } // Only run on dev branch
             }
