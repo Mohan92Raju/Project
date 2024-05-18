@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+    app:
+        image: capstone
+        ports:
+            - 80:80
