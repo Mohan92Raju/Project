@@ -1,7 +1,5 @@
 pipeline {
-    agent { dockerfile true
-            docker-compose.yml true
-            }
+    agent { dockerfile true }
     stages {
        stage('Build for Dev Branch (if on dev)') {
             when {
