@@ -19,7 +19,7 @@ pipeline {
                 }
                 // Docker steps for building and pushing dev image
                 docker {
-                    image 'capstone' // Use appropriate Docker image for building
+                    image 'nginx:latest' // Use appropriate Docker image for building
                     apiReturnStdout true
                     steps {
                         sh 'docker build -t mohandhgaja/dev:latest .' // Build Docker image
@@ -39,7 +39,7 @@ pipeline {
                 }
                 // Docker steps for building and pushing prod image
                 docker {
-                    image 'capstone' // Use appropriate Docker image for building
+                    image 'nginx:latest' // Use appropriate Docker image for building
                     apiReturnStdout true
                     steps {
                         sh 'docker build -t mohandhgaja/prod:latest .' // Build Docker image
