@@ -4,7 +4,7 @@ registry = "mohandhgaja/dev"
 registryCredential = 'dockerhub_id'
 dockerImage = 'capstone'
 }
-agent any
+agent { dockerfile true }
 stages {
 stage('Cloning our Git') {
 steps {
