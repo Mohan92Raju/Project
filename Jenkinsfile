@@ -8,7 +8,7 @@ pipeline {
   stages {         
     stage("Git Checkout"){           
       steps{                
-	git credentialsId: 'github', url: ''                 
+	git credentialsId: 'github', url: 'https://github.com/Mohan92Raju/Project.git'                 
 	echo 'Git Checkout Completed'            
       }        
     }
